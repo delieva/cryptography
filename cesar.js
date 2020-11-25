@@ -25,7 +25,7 @@ function encryptXor(text, key) {
 	return result;
 }
 
-const getCipherKey = () => {
+const getCipherKey = (string) => {
 	const smallest = { freqDiff: 1, key: '' }
 	for (let key = 1; key < KEY_LENGTH; key++) {
 		const decoded = encryptXor(string, key);
@@ -44,7 +44,9 @@ const getCipherKey = () => {
 	return smallest.key
 }
 
-const key = getCipherKey(string);
-console.log(encryptXor(string, key));
+// const key = getCipherKey(string);
+// console.log(encryptXor(string, key));
 
-// console.log(encryptXor(string, 23).length);
+module.exports = {
+	getCipherKey: getCipherKey
+};
