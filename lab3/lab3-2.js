@@ -9,15 +9,15 @@ const hackMt = async () => {
   try {
     let mainGenerator;
 
-    const beforeReq = Math.floor(Date.now() / 1000) - 1
+    const timeStampBeforeReq = Math.floor(Date.now() / 1000) - 1
 
     await createAccount(playerId);
     console.log(`Player: ${playerId} created`)
     const betResponse = await betAndPlay(Mt, playerId, 1, 1)
 
-    const afterReq = Math.floor(Date.now() / 1000) + 1
+    const timestampAfterReq = Math.floor(Date.now() / 1000) + 1
 
-    for (let i = beforeReq; i < afterReq; i++) {
+    for (let i = timeStampBeforeReq; i < timestampAfterReq; i++) {
       const generator = new MersenneTwister(i);
       const int = generator.random_int();
 
