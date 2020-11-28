@@ -7,24 +7,30 @@
 <body>
     <div>
         <h3>Registration</h3>
-        <form>
+        <form id="reg-form">
             <label for="reg-login">Login</label>
-            <input id="reg-login" type="text"/>
+            <input id="reg-login" name="login" type="text"/>
             <label for="reg-pass">Password</label>
-            <input id="reg-pass" type="password"/>
+            <input id="reg-pass" name="password" type="password"/>
+            <label for="reg-pass-rep">Password</label>
+            <input id="reg-pass-rep" name="repeatPassword" type="password"/>
             <button type="submit">Register</button>
         </form>
     </div>
+
     <div>
         <h3>Log in</h3>
-        <form>
+        <form id="login-form">
             <label for="login">Login</label>
-            <input id="login" type="text"/>
+            <input id="login" name="login" type="text"/>
             <label for="pass">Password</label>
-            <input id="pass" type="password"/>
+            <input id="pass" name="password" type="password"/>
             <button type="submit">Login</button>
         </form>
     </div>
+
 </body>
-<script src="./validator.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="scripts.js"></script>
+
 </html>

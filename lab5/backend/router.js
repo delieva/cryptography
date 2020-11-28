@@ -7,25 +7,25 @@ router.get('/', (req, res) => {
   res.status(200).send('Backend for crypto lab 5')
 })
 
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
   try {
     const { login, password } = req.body;
-    const data = AuthController.login(login, password)
+    const data = await AuthController.login(login, password)
 
-    return res.status(200);
+    return res.status(200).send(data);
   } catch (e) {
-    res.status(500).send();
+    res.status(e.code || 500).send(e.message || e.toString());
   }
 })
 
-router.post('/register', (req, res) => {
+router.post('/register', async (req, res) => {
   try {
-    const { login, password, passwordRepeat } = req.body;
-    const data = AuthController.register(login, password, passwordRepeat)
+    const { login, password, repeatPassword } = req.body;
+    const data = await AuthController.register(login, password, repeatPassword)
 
-    return res.status(200);
+    return res.status(200).send(data);
   } catch (e) {
-    res.status(500).send();
+    res.status(e.code || 500).send(e.message || e.toString());
   }
 })
 
