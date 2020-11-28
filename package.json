@@ -18,6 +18,7 @@
   "homepage": "https://github.com/delieva/cryptography#readme",
   "dependencies": {
     "axios": "^0.21.0",
+    "big-integer": "^1.6.48",
     "mersenne-twister": "^1.1.0"
   }
 }
