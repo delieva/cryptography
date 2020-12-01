@@ -44,8 +44,8 @@ const getCipherKey = (string) => {
 	return smallest.key
 }
 
-// const key = getCipherKey(string);
-// console.log(encryptXor(string, key));
+const key = getCipherKey(string);
+console.log(encryptXor(string, key));
 
 module.exports = {
 	getCipherKey: getCipherKey

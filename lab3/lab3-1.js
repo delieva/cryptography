@@ -8,7 +8,7 @@ const playerId = Math.floor(Date.now() / 1000);
 
 const modulus = (a, b) => ((a % b) + b) % b;
 
-const getIsOutOfRange = (value) => Math.abs(value) > 2 ** 31
+const getIsOutOfRange = (value) => Math.abs(value) > 2 ** 31;
 
 const copyLcg = (a, c, prevN) => {
 	const result = modulus((a * prevN + c), M);
