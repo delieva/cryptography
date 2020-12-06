@@ -30,7 +30,9 @@ onLogin = async (e) => {
   try {
     const postData = serializeForm(document.getElementById('login-form'))
     const { data } = await server.post('/login', {...postData})
-    alert(`Logged in a user.\nId: ${data.id}, Login: ${data.login}`)
+
+    const stringData = Object.entries(data).map(([key, value]) => `${key}: ${value}`).join('\n')
+    alert(`Logged in a user.\n${stringData}`)
   } catch (e) {
     alert(`Error occurred\n${e.response.data}`)
   }

@@ -39,7 +39,9 @@ class AuthController {
     return {
       id: user.id,
       login: user.login,
-      createdAt: user.createdAt
+      phone: user.phone,
+      address: user.address,
+      createdAt: user.createdAt,
     }
   }
 
@@ -62,6 +64,8 @@ class AuthController {
     return {
       id: user.id,
       login: user.login,
+      phone: user.phone,
+      address: user.address,
       createdAt: user.createdAt
     }
   }
