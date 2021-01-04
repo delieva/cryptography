@@ -4,3 +4,5 @@ node_modules/
 .DS_Store
 *.sqlite
 lab7/cert/*
+lab4/commonPasswords/*
+lab4/passwords/*
